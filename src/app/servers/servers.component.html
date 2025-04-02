@@ -1,0 +1,119 @@
+        <div class="serv">
+            <h1>Sentinel Project</h1>
+            <h2>Сервера</h2>
+        </div>
+
+
+       
+
+
+    <div class="ip">
+        <div class="server">
+            <h1 style="color: rgb(212, 212, 3);">Classic</h1>
+            <h2>IP: <span class="server-ip">193.164.18.22:7777</span></h2>
+            <button class="copy-btn" data-ip="193.164.18.22:7777">📋 Копировать IP</button>
+            <button class="info-btn">ℹ️ Показать информацию</button>
+            <div class="server-info">
+                <p>🌟 Классический сервер с балансом ролей и интересным геймплеем.</p>
+            </div>
+        </div>
+        
+        <div class="server">
+            <h1 style="color: green;">NoRules</h1>
+            <h2>IP: <span class="server-ip">193.164.18.22:7778</span></h2>
+            <button class="copy-btn" data-ip="193.164.18.22:7778">📋 Копировать IP</button>
+            <button class="info-btn">ℹ️ Показать информацию</button>
+            <div class="server-info">
+                <p>🔥 Сервер без правил! Полная свобода действий.</p>
+            </div>
+        </div>
+
+        <div class="server">
+            <h1 style="color: red;">MediumRP</h1>
+            <h2>IP: <span class="server-ip">193.164.18.22:7779</span></h2>
+            <button class="copy-btn" data-ip="193.164.18.22:7779">📋 Копировать IP</button>
+            <button class="info-btn">ℹ️ Показать информацию</button>
+            <div class="server-info">
+                <p>🎭 Средний уровень ролевой игры с интересными механиками.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <h1>Количество игроков на серверах</h1>
+    
+    <div class="loading">Загрузка...</div>
+    
+    <table id="playerTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Сервер ID</th>
+                <th>Количество игроков</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Данные будут добавляться сюда -->
+        </tbody>
+    </table>
+    
+    <script>
+        const SERVER_IDS = [70444, 70990, 78401];
+        const API_URL_TEMPLATE = "https://api.scplist.kr/api/servers/{}";
+
+        async function fetchPlayers(serverId) {
+            try {
+                const response = await fetch(API_URL_TEMPLATE.replace("{}", serverId.toString()), {
+                    headers: { "accept": "application/json;charset=UTF-8" }
+                });
+
+                if (!response.ok) {
+                    console.error(`Ошибка при получении данных с API для сервера ${serverId}`);
+                    return null;
+                }
+
+                const data = await response.json();
+                return data.players ?? null;
+            } catch (error) {
+                console.error(`Ошибка при запросе к API: ${error}`);
+                return null;
+            }
+        }
+
+        async function fetchAllPlayers() {
+            const playerCounts = {};
+            
+            for (const serverId of SERVER_IDS) {
+                playerCounts[serverId] = await fetchPlayers(serverId);
+            }
+
+            return playerCounts;
+        }
+
+        async function updateTable() {
+            const data = await fetchAllPlayers();
+            const tableBody = document.querySelector("#playerTable tbody");
+            const loadingText = document.querySelector(".loading");
+            const table = document.getElementById("playerTable");
+
+            // Убираем текст "Загрузка..."
+            loadingText.style.display = "none";
+            // Показываем таблицу
+            table.style.display = "table";
+
+            // Добавляем строки в таблицу
+            for (const serverId in data) {
+                const row = document.createElement("tr");
+                const serverCell = document.createElement("td");
+                serverCell.textContent = serverId;
+                const playerCountCell = document.createElement("td");
+                playerCountCell.textContent = data[serverId] !== null ? data[serverId] : "Ошибка";
+
+                row.appendChild(serverCell);
+                row.appendChild(playerCountCell);
+                tableBody.appendChild(row);
+            }
+        }
+
+        updateTable();
+    </script>
