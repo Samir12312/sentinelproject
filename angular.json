@@ -23,12 +23,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/bfwkhfj",
+            "outputPath": "docs/bfwkhfj",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
+            "baseHref": ["/REPO_NAME/"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
