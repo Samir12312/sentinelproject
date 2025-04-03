@@ -149,8 +149,8 @@ main ul li strong {
 
 
 .donate-privileges h2 {
-    color: #ffcc00; /* Новый цвет для заголовков */
-    text-align: center;
+    color: #000000; /* Новый цвет для заголовков */
+    text-align: center; 
 }
 
 .green {
@@ -215,3 +215,4 @@ main ul li strong {
     display: flex;
     justify-content: center;
 }
+
