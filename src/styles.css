@@ -4,8 +4,13 @@ body {
     margin: 0;
     padding: 0;
     color: #ddd;
-    background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #292929); /* Глубокий тёмный фон с плавным переходом */
-
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/2035107099025972816/AE3B26A4A68813E4D7DF73321587199BD842D91B/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true);
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    
+    background-attachment: fixed;
+    
 }
 
 /* Навигация */

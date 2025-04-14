@@ -7,6 +7,15 @@ body {
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Тёмный фон */
 }
 
+/* Хедер и навигация */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+}
+
 .navb {
     display: flex;
     justify-content: space-around;
@@ -18,8 +27,18 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0 0 15px 15px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navb img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 10px;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+    pointer-events: none;
 }
 
 .navb a {
@@ -33,19 +52,13 @@ body {
 }
 
 .navb a:hover, .navb a.active {
-    
     color: white;
     transform: scale(1.1);
-}
-
-header {
-    padding-top: 70px;
 }
 
 nav a:hover {
     background: #333;
 }
-
 
 /* Списки */
 ol {
@@ -94,21 +107,54 @@ button:hover {
     color: white;
 }
 
-header {
-    width: 100%;
+/* Эффекты при наведении */
+.serv, .server, .ip div, .container {
+    background: linear-gradient(135deg, #111, #222, #333);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(10px); /* Прозрачность */
+    background-color: rgba(20, 20, 20, 0.7);
 }
 
-.navb img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0.7); /* Затемнение логотипа */
+.serv:hover, .server:hover, .ip div:hover, .container:hover {
+    transform: translateX(10px) scale(1.03);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.7);
 }
 
-header img {
-    filter: brightness(1); /* Убираем затемнение */
-    transition: filter 0.3s ease; /* Добавляем плавный эффект */
+/* Контейнер */
+.container {
+    max-width: 1000px;
+    padding: 40px;
 }
 
-header img:hover {
-    filter: brightness(1.2); /* Увеличиваем яркость только при наведении */
+/* IP блок */
+.ip div {
+    width: 300px;
+}
+
+/* Server блок */
+.server {
+    width: 300px;
+}
+
+/* Адаптивность (по желанию можно добавить) */
+@media (max-width: 600px) {
+    .navb {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navb a {
+        padding: 8px 12px;
+    }
+
+    .server, .ip div, .serv, .container {
+        width: 90%;
+    }
 }

@@ -1,15 +1,16 @@
 .serv {
-    background: linear-gradient(135deg, #111, #222, #333); /* Глубокий тёмный градиент */
+    background: linear-gradient(135deg, rgba(17, 17, 17, 0.8), rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.8)); /* Прозрачный фон */
     padding: 20px;
     border-radius: 15px;
     text-align: center;
     width: 350px;
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5); /* Белая тень */
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
     color: white;
     font-family: Arial, sans-serif;
     margin: 20px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .serv:hover {
     transform: scale(1.05);
@@ -40,13 +41,21 @@
 }
 
 .ip div {
-    background: linear-gradient(135deg, #1a1a1a, #292929, #333);
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 26, 0.8),
+        rgba(41, 41, 41, 0.8),
+        rgba(51, 51, 51, 0.8)
+    );
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     width: 300px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Белая тень */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
+
 
 .copy-btn {
     background: linear-gradient(135deg, #444, #666);
@@ -158,3 +167,15 @@ h1, h2 {
     text-align: center;
 }
 
+.serv12 {
+    background: linear-gradient(135deg, rgba(17, 17, 17, 0.8), rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.8)); /* Прозрачный фон */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 500px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5); /* Белая тень */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

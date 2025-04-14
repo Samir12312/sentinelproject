@@ -3,49 +3,68 @@ body {
     margin: 0;
     padding: 0;
     color: #ddd;
-    background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Тёмный фон с градиентом */
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
 }
 
-.serv {
-    background: linear-gradient(135deg, #111, #222); /* Глубокий тёмный градиент */
-    padding: 20px;
-    border-radius: 15px;
+/* HEADER & FOOTER */
+.header, .footer {
+    background: linear-gradient(135deg, #111, #222);
+    padding: 20px 0;
+    color: #ddd;
     text-align: center;
-    width: 600px;
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5); /* Белая тень */
-    color: #bbb;
-    font-family: Arial, sans-serif;
-    margin: 20px auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
+    font-family: 'Arial', sans-serif;
+    border-radius: 10px;
 }
 
-.serv:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.7); /* Усиленная белая тень */
-
-}
-
-.serv h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
+.header h1, .footer p {
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
     text-transform: uppercase;
-    font-weight: bold;
-    color: #ffffff; /* Новый цвет для заголовков */
+    letter-spacing: 1px;
 }
 
+/* NAVIGATION MENU */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #111, #222);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-menu a {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* MAIN CONTENT */
 main {
     max-width: 1000px;
     margin: 30px auto;
     text-align: left;
     padding: 40px;
-    background: linear-gradient(135deg, #111, #222); /* Глубокий тёмный градиент */
+    background: linear-gradient(135deg, #111, #222);
     border-radius: 20px;
-    box-shadow: 0px 8px 30px rgba(255, 255, 255, 0.5); /* Белая тень */
+    box-shadow: 0px 8px 30px rgba(255, 255, 255, 0.5);
     font-family: 'Arial', sans-serif;
 }
 
 main h1, main h2, main h3 {
-    color: #ffffff; /* Новый цвет для заголовков */
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -86,71 +105,75 @@ main ul li strong {
     color: #ffe8cc;
 }
 
-.info-btn {
-    background: linear-gradient(135deg, #111, #222); /* Глубокий тёмный градиент */
-    color: #ddd;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5); /* Белая тень */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
-}
-
-.info-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.7); /* Усиленная белая тень */
-}
-
-.info-panel {
-    background: linear-gradient(135deg, #111, #222); /* Глубокий тёмный градиент */
+/* BLOCKS & ELEMENTS */
+.serv, .info-panel, .donate-privileges, .card {
+    background: linear-gradient(135deg, #111, #222);
     padding: 20px;
     border-radius: 15px;
-    text-align: left;
-    width: 450px;
-    color: #ddd;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
+    color: #bbb;
     font-family: Arial, sans-serif;
     margin: 20px auto;
-    display: none;
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5); /* Белая тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-panel:hover {
-    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.7); /* Усиленная белая тень */
+.serv {
+    text-align: center;
+    width: 600px;
 }
 
-.info-panel h2 {
+.serv:hover,
+.info-panel:hover,
+.card:hover,
+.donate-privileges:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.7);
+}
+
+.serv h1,
+.info-panel h2,
+.donate-privileges h2,
+.card h3 {
     font-size: 24px;
     margin-bottom: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #8a1000; /* Новый цвет для заголовков */
+    color: #ffffff;
     display: flex;
     justify-content: center;
 }
 
+.info-panel {
+    text-align: left;
+    width: 450px;
+    display: none;
+}
+
+.info-panel h2 {
+    color: #8a1000;
+}
+
 .donate-privileges {
-    padding: 15px;
-    margin: 20px auto;
     width: 80%;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Белая тень */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.donate-privileges:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Усиленная белая тень */
-}
-
-
 
 .donate-privileges h2 {
-    color: #000000; /* Новый цвет для заголовков */
-    text-align: center; 
+    color: #000000;
+    text-align: center;
+}
+
+.donate-privileges ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.donate-privileges li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
 }
 
 .green {
@@ -173,8 +196,8 @@ main ul li strong {
     font-size: 1.2em;
 }
 
-.buy-btn {
-    background: linear-gradient(135deg, #111, #222); /* Глубокий тёмный градиент */
+.buy-btn, .info-btn {
+    background: linear-gradient(135deg, #111, #222);
     color: #ddd;
     padding: 12px 25px;
     border: none;
@@ -188,31 +211,41 @@ main ul li strong {
     margin: 15px auto;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
 }
 
-.buy-btn:hover {
+.buy-btn:hover, .info-btn:hover {
     transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.7);
 }
 
-.donate-privileges ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.donate-privileges li {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-}
-
-.btn {
+/* LAYOUT HELPERS */
+.btn, .ogr {
     display: flex;
     justify-content: center;
 }
 
-.ogr {
-    display: flex;
-    justify-content: center;
+.card {
+    max-width: 600px;
+    color: #ccc;
 }
 
+/* ADAPTIVITY */
+@media screen and (max-width: 768px) {
+    .serv, .info-panel, .card {
+        width: 90%;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .donate-privileges {
+        width: 95%;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
