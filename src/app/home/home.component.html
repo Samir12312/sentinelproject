@@ -23,31 +23,38 @@
   
     <section class="block">
       <h2 class="vozm">Известные SCP</h2>
-  
-      <div class="scp">
+    
+      <div class="scp" data-sound="scp173">
         <h3>SCP-173 – Скульптура</h3>
         <p>Мгновенно убивает при потере визуального контакта.</p>
       </div>
-  
-      <div class="scp">
+    
+      <div class="scp" data-sound="scp049">
         <h3>SCP-049 – Чумной Доктор</h3>
         <p>Превращает людей в зомби. Медленный, но крайне опасный вблизи.</p>
       </div>
-  
-      <div class="scp">
+    
+      <div class="scp" data-sound="scp096">
         <h3>SCP-096 – Скромник</h3>
         <p>Атакует любого, кто увидит его лицо. Убежать почти невозможно.</p>
       </div>
-
-      <div class="scp">
+    
+      <div class="scp" data-sound="scp079">
         <h3>SCP-079 – Компьютер</h3>
         <p>ИИ, управляющий дверями и помогающий другим SCP.</p>
       </div>
-
-      <div class="scp">
+    
+      <div class="scp" data-sound="scp106">
         <h3>SCP-106 – Старик</h3>
         <p>Телепортируется через стены, проходит сквозь двери и ловит жертв в "карманное измерение".</p>
       </div>
+    
+      <!-- Звуки -->
+      <audio id="scp173" src="sounds/scp173.mp3" preload="auto"></audio>
+      <audio id="scp049" src="sounds/scp049.mp3"></audio>
+      <audio id="scp096" src="scpsl-096-crying.mp3"></audio>
+      <audio id="scp079" src="sounds/scp079.mp3"></audio>
+      <audio id="scp106" src="sounds/scp106.mp3"></audio>
     </section>
   
     <section class="block">
@@ -121,5 +128,17 @@
       </section>
   </main>
   
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.scp').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const soundId = el.getAttribute('data-sound');
+        const audio = document.getElementById(soundId);
+        if (audio) {
+          audio.currentTime = 0;
+          audio.play().catch(e => console.log("Ошибка воспроизведения: ", e));
+        }
+      });
+    });
+  </script>
+  
   
