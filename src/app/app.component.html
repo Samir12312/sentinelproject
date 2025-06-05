@@ -1,19 +1,40 @@
-
-    <header>
-        <nav class="navb">
-            <a routerLink="/" routerLinkActive="active">Главная</a>
-            <a routerLink="./donate" routerLinkActive="active">Донат</a>
-            <img src="https://cdn.discordapp.com/attachments/1352950335278157886/1359213406812639495/image.png?ex=67f6a9a1&is=67f55821&hm=9f38b6462ade4c9260d4203a004a39f780fcdb5663506e58c7221fc11c49cf14&" alt="Логотип">
-            <a routerLink="./servers" routerLinkActive="active">Сервера</a>
-            <a routerLink="./info" routerLinkActive="active">Правила</a>
-        </nav>
-        
-        <router-outlet></router-outlet>
-    </header>
+<header>
     
-    <main>
-        
-    </main>
+    <nav>
+      <div class="logo">AARONN</div>
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="./donate" routerLinkActive="active">About Me</a></li>
+        <li><a routerLink="./info" routerLinkActive="active">My Works</a></li>
+        <li ><a routerLink="./details">Details</a></li>
+        <li class="contact-btn"><a routerLink="./servers">Contact</a></li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+  </header>
     
+<section class="contact-section">
+  <p class="contact-label">Get in Touch With Us</p>
+  <a href="mailto:info@aaronn.com" class="contact-email">infoaaron.com</a>
 
+  <div class="footer-info">
+    <div class="footer-left">
+      <div class="logo">AAR<span class="o-glow">O</span>NN</div>
+    </div>
+    <div class="footer-center">
+      <p>Street Avenue 21, CA</p>
+      <p>0-8-00-888-000</p>
+    </div>
+    <div class="footer-right">
+      <p>+9 0283353</p>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <footer>&copy; 2023. Ideapeel. All rights reserved.</footer>
+</section>
    

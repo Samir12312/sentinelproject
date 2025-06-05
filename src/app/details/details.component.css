@@ -1,0 +1,171 @@
+/* Секция Project Detail */
+.project-detail {
+ 
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.project-detail h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.project-detail p {
+  color: #9ca3af; /* gray-400 */
+}
+
+.project-detail img {
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
+  margin-top: 50px;
+}
+
+.flexjustify-center {
+display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-detail h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-detail p + p {
+  margin-top: 1rem;
+}
+
+.flexjustify-center h3 {
+    display: flex;
+    justify-content: center;
+    margin-right: 600px;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.flexjustify-center p {
+    width: 600px;
+}
+
+.text1 {
+    margin-left: 60px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.images img {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.text1 {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.text1 h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.text1 p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.nav:hover {
+  opacity: 0.8;
+}
+
+.arrow {
+  font-size: 20px;
+}
+
+.text1 h2 {
+    font-size: 50px;
+    margin-right: 300px;
+}
+
+ .container1 {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .projects {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .card-subtitle {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .projects img {
+        Width: 360px;
+        Height: 465px;
+    }
